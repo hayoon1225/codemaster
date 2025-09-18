@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>코드마스터</title>
+    <style>
+        .bottom-block {
+            background-color: blanchedalmond;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 15vh;
+        }
+        .top-block {
+            background-color: blanchedalmond;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 15vh; 
+        }
+        .content {
+            margin-top: 17vh; 
+            margin-bottom: 17vh;
+            padding: 20px;
+            height: 100px
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="bottom-block">
+        
+    </div>
+    <div class="top-block">
+
+
+    <a href = "index.html"> 
+    <button style="width: 40px; height: 30px;">X</button>
+    </a>
+        <h1 style="width: 250px; height:5vh;margin-left:50% ;">자니베코프 현상</h1>
+    </div>
+    <div class="content">
+        
+        
+
+        <label for="speed">
+            <input type="text" max ="100"  style="width:70px; height: 40px;   margin-left:87%;"  id="speed1">
+             <br>
+        
+            <input type="range" min="1" max="100" style=" margin-left: 80%; margin-top:1px; width:200px;height: 30px;" id="speed2">
+        </label>
+    </div>
+    <script>
+        const textBox = document.getElementById("speed1"); 
+        const slider = document.getElementById("speed2");  
+        slider.addEventListener("input", function() {
+            textBox.value = slider.value;
+        });
+
+    
+        textBox.addEventListener("input", function() {
+            var val = Math.min(100, Math.max(1, textBox.value));
+            slider.value = val;
+            textBox.value = val;
+        });
+    </script>
+</body>
+</html>
