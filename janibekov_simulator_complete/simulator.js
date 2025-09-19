@@ -44,8 +44,10 @@ function draw() {
   fill(100, 200, 250);
   stroke(255);
   box(200, 60, 40);
+  fill('green');
   box(40, 60, 200);
   translate(0, -60, 0);
+  fill('red')
   box(40, 120, 40);
 }
     
