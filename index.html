@@ -1,42 +1,86 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>코드마스터</title>
- <style>
-  .top-block {
-    background-color: blanchedalmond;
-    width: auto;
-    padding: 80px;
-  }
-  .bottom-block {
-    background-color: blanchedalmond;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    padding: 80px;
-  }
- </style>
-</head>
-<body>
-  <h1 style="background-color: blanchedalmond;padding:30px;">
-    <span style="margin-left: 400px;font-size: 100px;">코드마스터 물리실험실
+    <meta charset="UTF-8">
+    <title>코드마스터</title>
+    <style>
+        .bottom-block {
+            background-color: blanchedalmond;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 15vh;
+        }
+        .top-block {
+            background-color: blanchedalmond;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 15vh;
 
-    </span> 
-  </h1>
-  
-  <div class="bottom-block"></div>
-  <div>
-    <img style="width: 400px; margin:20px 40px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQce8Q5W3xB4tqQJTE73wW9yavz4xIgmcXoBg&s">
-    <img style="width: 400px; margin:20px 40px" src="https://th.bing.com/th/id/OIP.6q36AibufXhWzZEDhnN1DQHaDQ?w=314&h=153&c=7&r=0&o=7&pid=1.7&rm=3">
-    <br><a href = "second.html">
-      <button style="width: 300px;font-size: 50px;padding: 10px 20px; margin-left: 80px;">자니베코프 현상</button>
-      
-    </a>
-    <a href = "thitd.html">
-      <button style="width: 300px;font-size:50px;margin:20px 40px">매그누스 현상</button>
-    </a>
-    
-  </div>
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .content {
+            margin-top: 17vh;
+            margin-bottom: 17vh;
+            padding: 20px;
+        }
+
+        .close-btn {
+            width: 40px;
+            height: 30px;
+        }
+
+
+        .title {
+            flex: 1;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bottom-block"></div>
+
+    <div class="top-block">
+        <a href="index.html">
+            <button class="close-btn">X</button>
+        </a>
+
+        <h1 class="title">자니베코프 현상</h1>
+        
+        <div style="width:40px"></div>
+    </div>
+
+    <div class="content">
+        <label for="speed">
+            <input type="text" style="width:70px; height:40px; margin-left:87%;" id="speed1">
+            <br>
+            <span id="speed">50</span>
+            <input type="range" min="1" max="100" style="margin-left:80%; margin-top:1px; width:200px; height:30px;" id="speed2">
+        </label>
+    </div>
+
+    <script>
+        const slider = document.getElementById("speed2");
+        const display = document.getElementById("speed");
+        const textBox = document.getElementById("speed1");
+
+        slider.addEventListener("input", () => {
+            display.textContent = slider.value;
+            textBox.value = slider.value;
+        });
+
+        textBox.addEventListener("input", () => {
+            slider.value = textBox.value;
+            display.textContent = textBox.value;
+        });
+    </script>
+
 </body>
 </html>
