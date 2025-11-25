@@ -1,86 +1,76 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>코드마스터</title>
-    <style>
-        .bottom-block {
-            background-color: blanchedalmond;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            height: 15vh;
-        }
-        .top-block {
-            background-color: blanchedalmond;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 15vh;
+  <meta charset="UTF-8">
+  <title>코드마스터</title>
+ <style>
+  .top-block {
+    background-color: blanchedalmond;
+    width: auto;
+    padding: 80px;
+  }
+  .bottom-block {
+    background-color: blanchedalmond;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 80px;
+  }
 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 0 20px;
-            box-sizing: border-box;
-        }
-        .content {
-            margin-top: 17vh;
-            margin-bottom: 17vh;
-            padding: 20px;
-        }
-
-        .close-btn {
-            width: 40px;
-            height: 30px;
-        }
+ 
+  .img-box {
+    position: relative;
+    display: inline-block;
+  }
 
 
-        .title {
-            flex: 1;
-            text-align: center;
-        }
-    </style>
+  .tooltip {
+    visibility: hidden;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: black;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 20px;  
+    max-width: 400px;
+  }
+
+ 
+  .img-box:hover .tooltip {
+    visibility: visible;
+  }
+
+ </style>
 </head>
-
 <body>
-    <div class="bottom-block"></div>
+  <h1 style="background-color: blanchedalmond;padding:30px;">
+    <span style="margin-left: 400px;font-size: 100px;">코드마스터 물리실험실</span> 
+  </h1>
+  
+  <div class="bottom-block"></div>
 
-    <div class="top-block">
-        <a href="index.html">
-            <button class="close-btn">X</button>
-        </a>
+  <div>
+    
+    <div class="img-box" style="width:400px; margin:20px 80px;">
+      <img style="width: 400px;" 
+           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQce8Q5W3xB4tqQJTE73wW9yavz4xIgmcXoBg&s">
 
-        <h1 class="title">자니베코프 현상</h1>
-        
-        <div style="width:40px"></div>
+      <div class="tooltip">설명:물체가 세 개의 주 회전축(최대, 최소, 중간 관성 모멘트 축)을 가지고 있을 때,<br> 중간 관성 모멘트를 가진 축을 중심으로 회전하면 불안정해지며 방향이 뒤집히는 현상</div>
     </div>
 
-    <div class="content">
-        <label for="speed">
-            <input type="text" style="width:70px; height:40px; margin-left:87%;" id="speed1">
-            <br>
-            <span id="speed">50</span>
-            <input type="range" min="1" max="100" style="margin-left:80%; margin-top:1px; width:200px; height:30px;" id="speed2">
-        </label>
-    </div>
-
-    <script>
-        const slider = document.getElementById("speed2");
-        const display = document.getElementById("speed");
-        const textBox = document.getElementById("speed1");
-
-        slider.addEventListener("input", () => {
-            display.textContent = slider.value;
-            textBox.value = slider.value;
-        });
-
-        textBox.addEventListener("input", () => {
-            slider.value = textBox.value;
-            display.textContent = textBox.value;
-        });
-    </script>
-
+    <img style="width: 400px; margin:20px 40px" 
+         src="https://th.bing.com/th/id/OIP.6q36AibufXhWzZEDhnN1DQHaDQ?w=314&h=153&c=7&r=0&o=7&pid=1.7&rm=3">
+    
+    <br>
+    <a href="second.html">
+      <button style="width: 300px;font-size: 50px;padding: 10px 20px; margin-left: 80px;">자니베코프 현상</button>
+    </a>
+    <a href="thitd.html">
+      <button style="width: 300px;font-size:50px;margin:20px 40px">매그누스 현상</button>
+    </a>
+  </div>
 </body>
 </html>
