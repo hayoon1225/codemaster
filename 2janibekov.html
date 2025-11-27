@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    
+<head>
+  <meta charset="UTF-8" />
+  <title>자니베코프 시뮬레이터</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    .ui-panel {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .ui-panel label {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ui-panel">
+    <label>
+      🌀 회전 속도: <input id="speed" type="range" min="0" max="0.2" step="0.01" value="0.1" />
+    </label>
+    <label>
+      🎯 초기 각도: <input id="angle" type="range" min="-1" max="1" step="0.1" value="0" />
+    </label>
+    <label>
+      ⚖️ 비대칭 정도: <input id="asymmetry" type="range" min="0" max="2" step="0.1" value="1" />
+    </label>
+  </div>
+ <div class="sidebar">
+      <h2>자니베코프</h2>
+      <p>무중력상태에서 회전하는 강체가 중간 관성축을 중심으로 회전할 때 불안정해지는 현상</p>
+      <p> 중간 축에서 회전할 때, 원심력과 장력이 축에 토크(회전력)를 발생시켜 회전 방향이 주기적으로 180도씩 반전된다.</p>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/p5/lib/p5.min.js"></script>
+  <script src="simulator.js"></script>
+
+</body>
+</html>
+    
